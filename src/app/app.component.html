@@ -1,5 +1,5 @@
 <app-loader *ngIf="isLoading"></app-loader>
 
-<main class="app">
+<main class="app" [class.hidden]="isLoading">
 	<router-outlet></router-outlet>
 </main>

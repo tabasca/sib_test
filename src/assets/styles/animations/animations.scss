@@ -1,0 +1,19 @@
+@keyframes frosting-opacity {
+  0%, 100%   {
+  	opacity: 0;
+  	transform: rotate(0deg);
+  }
+  50% {
+  	opacity: 1;
+  	transform: rotate(360deg);
+  }
+}
+
+@keyframes sprinkle-spin {
+  0%, 100%   {
+  	transform: rotate(0deg);
+  }
+  50% {
+  	transform: rotate(360deg);
+  }
+}

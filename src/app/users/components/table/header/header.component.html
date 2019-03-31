@@ -40,7 +40,11 @@
     <mat-datepicker disabled="false" #pickerDateEnd></mat-datepicker>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="reset" (click)="onResetFiltersClick()">Сбросить фильтры</button>
+  <button mat-raised-button
+          color="primary"
+          type="reset"
+          [disabled]="!filtersForm.touched"
+          (click)="onResetFiltersClick()">Сбросить фильтры</button>
 </form>
 
 

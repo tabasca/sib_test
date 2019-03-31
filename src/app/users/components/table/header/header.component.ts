@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
+import { debounceTime } from 'rxjs/operators';
+
 import { UsersService } from '../../../services/users.service';
 
 @Component({
@@ -24,6 +27,9 @@ export class HeaderComponent implements OnInit {
     this._initForm();
 
     this.filtersForm.valueChanges
+      .pipe(
+        debounceTime(500)
+      )
       .subscribe(data => {
         this._usersService.filtersChanged.next({
           lastName: data.lastName,
