@@ -62,4 +62,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  public onResetFiltersClick() {
+    this.dateFrom = null;
+    this.dateTo = null;
+    this.filtersForm.reset();
+  }
+
 }
