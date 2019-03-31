@@ -1,7 +1,11 @@
 <button [disabled]="currentPage === 1"
         type="button"
+				mat-raised-button
+				color="primary"
         (click)="moveBackward()">Назад</button>
 <span> {{ currentPage }} / {{ pagesCount }} </span>
 <button [disabled]="currentPage === pagesCount"
         type="button"
+				mat-raised-button
+				color="primary"
         (click)="moveForward()">Вперед</button>

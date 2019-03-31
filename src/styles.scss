@@ -1,2 +1,10 @@
 //angular material UI
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-form-field {
+  margin-right: 30px;
+}
+
+.mat-divider {
+  padding: 10px 0;
+}

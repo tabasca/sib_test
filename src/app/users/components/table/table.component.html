@@ -1,5 +1,7 @@
 <app-users-table-header></app-users-table-header>
 
+<mat-divider></mat-divider>
+
 <mat-form-field class="users__row">
 	<mat-select
 		[formControl]="pageSizeCtrl"
@@ -21,5 +23,7 @@
 																pagination:pageSize:currentPage"
 												[user]="user"></app-users-table-item>
 </mat-list>
+
+<mat-divider></mat-divider>
 
 <app-users-table-footer></app-users-table-footer>

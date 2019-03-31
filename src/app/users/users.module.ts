@@ -4,8 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import {
   DateAdapter,
-  MAT_DATE_FORMATS, MAT_DATE_LOCALE,
-  MatDatepickerModule,
+  MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatButtonModule,
+  MatDatepickerModule, MatDividerModule,
   MatFormFieldModule,
   MatInputModule, MatListModule, MatSelectModule, NativeDateAdapter
 } from '@angular/material';
@@ -51,6 +51,8 @@ const APP_DATE_FORMATS = {
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    MatDividerModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
