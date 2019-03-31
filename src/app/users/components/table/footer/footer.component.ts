@@ -20,11 +20,11 @@ export class FooterComponent {
   }
 
   public moveForward() {
-    this._usersService.page = this.currentPage + 1;
+    this._usersService.page = this.currentPage;
   }
 
   public moveBackward() {
-    this._usersService.page = this.currentPage - 1;
+    this._usersService.page = this.currentPage - 2;
   }
 
 }
