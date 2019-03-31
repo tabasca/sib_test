@@ -1,0 +1,47 @@
+<form [formGroup]="filtersForm">
+  <mat-form-field>
+    <input matInput
+           formControlName="lastName"
+           type="text"
+           placeholder="Фамилия">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           formControlName="phone"
+           type="tel"
+           placeholder="Телефон">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput
+           formControlName="city"
+           type="text"
+           placeholder="Город">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+           #dateFrom
+           formControlName="dateFrom"
+           placeholder="От"
+           (dateChange)="onDateChange($event.value, 'from')"
+           [matDatepicker]="pickerDateStart">
+    <mat-datepicker-toggle matSuffix [for]="pickerDateStart"></mat-datepicker-toggle>
+    <mat-datepicker disabled="false" #pickerDateStart ></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput
+           #dateTo
+           formControlName="dateTo"
+           placeholder="До"
+           (dateChange)="onDateChange($event.value, 'to')"
+           [matDatepicker]="pickerDateEnd">
+    <mat-datepicker-toggle matSuffix [for]="pickerDateEnd"></mat-datepicker-toggle>
+    <mat-datepicker disabled="false" #pickerDateEnd></mat-datepicker>
+  </mat-form-field>
+
+  <button type="reset">Сбросить фильтры</button>
+</form>
+
+
+

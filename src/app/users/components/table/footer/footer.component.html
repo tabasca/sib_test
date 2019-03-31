@@ -1,0 +1,7 @@
+<button [disabled]="currentPage === 1"
+        type="button"
+        (click)="moveBackward()">Назад</button>
+<span> {{ currentPage }} / {{ pagesCount }} </span>
+<button [disabled]="currentPage === pagesCount"
+        type="button"
+        (click)="moveForward()">Вперед</button>

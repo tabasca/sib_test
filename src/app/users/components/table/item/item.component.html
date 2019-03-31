@@ -1,0 +1,16 @@
+<mat-list-item>
+		<img matListAvatar [src]="user.picture.thumbnail" [alt]="user.login.username">
+		<h3 matLine> {{ user.name.title }} {{ user.name.first }} {{ user.name.last }} </h3>
+		<p matLine>
+      <span> Phone: </span>
+      <span class="demo-2"> {{ user.phone }} </span>
+    </p>
+		<p matLine>
+      <span> City: </span>
+      <span class="demo-2"> {{ user.location.city }} </span>
+    </p>
+		<p matLine>
+      <span> Birth date: </span>
+      <span class="demo-2"> {{ user.dob }} </span>
+    </p>
+	</mat-list-item>

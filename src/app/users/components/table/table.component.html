@@ -1,0 +1,25 @@
+<app-users-table-header></app-users-table-header>
+
+<mat-form-field class="users__row">
+	<mat-select
+		[formControl]="pageSizeCtrl"
+		placeholder="Выводить по"
+		(selectionChange)="pageSize = $event.value">
+		<mat-option [value]="10">10</mat-option>
+		<mat-option [value]="20">20</mat-option>
+		<mat-option [value]="30">30</mat-option>
+	</mat-select>
+</mat-form-field>
+
+<mat-list>
+	<app-users-table-item *ngFor="let user of users |
+																search:filters.lastName:'lastName' |
+																search:filters.phone:'phone' |
+																search:filters.city:'city' |
+																dateFilter:filters.dateFrom:'dob':'from' |
+																dateFilter:filters.dateTo:'dob':'to' |
+																pagination:pageSize:currentPage"
+												[user]="user"></app-users-table-item>
+</mat-list>
+
+<app-users-table-footer></app-users-table-footer>
