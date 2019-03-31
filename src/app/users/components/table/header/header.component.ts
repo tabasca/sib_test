@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 import { UsersService } from '../../../services/users.service';
+import { Filters } from '../../../models/filters';
 
 @Component({
   selector: 'app-users-table-header',
@@ -30,15 +31,14 @@ export class HeaderComponent implements OnInit {
       .pipe(
         debounceTime(500)
       )
-      .subscribe(data => {
-        this._usersService.filtersChanged.next({
+      .subscribe(data => this._triggerFilterChange({
           lastName: data.lastName,
           phone: data.phone,
           city: data.city,
           dateFrom: this.dateFrom,
           dateTo: this.dateTo
-        });
-      });
+        })
+      );
   }
 
   private _initForm() {
@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
       this.dateTo = val;
     }
 
-    this._usersService.filtersChanged.next({
+    this._triggerFilterChange({
       lastName: this.filtersForm.value.lastName,
       phone: this.filtersForm.value.phone,
       city: this.filtersForm.value.city,
@@ -72,6 +72,12 @@ export class HeaderComponent implements OnInit {
     this.dateFrom = null;
     this.dateTo = null;
     this.filtersForm.reset();
+  }
+
+  private _triggerFilterChange(filters: Filters) {
+     this._usersService.filtersChanged.next(filters);
+
+     this._usersService.page = 0;
   }
 
 }
